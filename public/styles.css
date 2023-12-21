@@ -315,10 +315,16 @@ img {
 
 .soldier-look {
     width: 33vh;
+    height: 0;
     flex: none;
     position: relative;
     top: -81vh;
     left: 16vh;
+}
+
+.dogtags {
+    position: relative;
+    top: 47vh;
 }
 
 .soldier-dogtags-left {
@@ -326,7 +332,7 @@ img {
     max-width: 100%;
     height: auto;
     position: relative;
-    top: 57vh;
+    top: 10vh;
     left: -4vh;
     margin: 0;
     height: auto;
@@ -338,7 +344,7 @@ img {
     max-width: unset;
     position: relative;
     left: -16vh;
-    top: 61vh;
+    top: 12vh;
     height: auto;
     width: auto;
     margin: 0;
