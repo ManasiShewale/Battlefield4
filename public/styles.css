@@ -1,5 +1,6 @@
 body {
-    background-image: url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038f70ef0141a2f22d50f58_menu__background.jpg");
+    background-image: linear-gradient(rgba(0, 12, 19, .6), rgba(0, 12, 19, .6)), url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038f70ef0141a2f22d50f58_menu__background.jpg");
+    background-color: #161616
 }
 
 div {
@@ -14,7 +15,9 @@ button {
 .navbar {
     background-color: transparent;
     display: flex;
-    margin-left: 12vh;
+    margin-left: 0;
+    left: 12vh;
+    width: 190vh;
 }
 
 .nav-link {
@@ -22,9 +25,10 @@ button {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 500;
     font-size: 2.2vh;
-    color: rgba(255, 255, 255, 100);
+    color: #fff !important;
     padding: 1.5rem 0.5rem 0rem 0.5rem !important;
     line-height: 3.6vh;
+    letter-spacing: 0.1vh;
 }
 
 .nav-link:hover {
@@ -106,11 +110,10 @@ img {
     width: 6.3vh;
 }
 
-.nabar-brand,
+.navbar-brand,
 img {
     height: 26.5px;
     width: 126.54px;
-    margin: 1vh;
     margin-right: 3.5vh;
 }
 
@@ -298,4 +301,495 @@ img {
 .col-lg-2 {
     padding: 0;
     max-width: fit-content;
+}
+
+.soldier {
+    z-index: 2;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 6vh;
+    display: flex;
+    position: relative;
+    height: 0;
+}
+
+.soldier-look {
+    width: 33vh;
+    flex: none;
+    position: relative;
+    top: -81vh;
+    left: 16vh;
+}
+
+.soldier-dogtags-left {
+    z-index: 2;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    top: 57vh;
+    left: -4vh;
+    margin: 0;
+    height: auto;
+    width: auto;
+}
+
+.soldier-dogtags-right {
+    z-index: 1;
+    max-width: unset;
+    position: relative;
+    left: -16vh;
+    top: 61vh;
+    height: auto;
+    width: auto;
+    margin: 0;
+}
+
+.soldier-pic {
+    width: 33vh;
+    height: auto;
+    position: relative;
+    margin: 0;
+}
+
+.soldier-menu {
+    width: 30vh;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    margin-right: 6vh;
+}
+
+.soldier-menu-w {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.7vh;
+    padding-right: 1.7vh;
+    text-decoration: none;
+    display: flex;
+}
+
+.soldier-menu-h,
+h2 {
+    color: #fff;
+    letter-spacing: .07vh;
+    text-transform: uppercase;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.4vh;
+    font-weight: 600;
+    line-height: 1.8vh;
+    text-decoration: none;
+}
+
+.soldier-content {
+    display: flex;
+    top: -45vh;
+    left: 21vh;
+    flex-direction: column;
+    padding: 0;
+}
+
+.soldier-level {
+    width: 8vh;
+    height: 8vh;
+    border: 2px solid rgba(255, 255, 255, .1);
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2vh;
+    display: flex;
+    position: relative;
+    flex: 0 0 8vh
+}
+
+.soldier-level-bar {
+    width: 8vh;
+    height: 8vh;
+    border: 2px solid #ee930e;
+    border-style: solid solid none none;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1px;
+    margin-left: -1px;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+.soldier-info {
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 3vh;
+    display: flex;
+}
+
+.soldier-level-info {
+    padding: 0;
+}
+
+.soldier-level-info-h {
+    color: #fff;
+    margin-bottom: 1vh;
+    font-family: Rajdhani, sans-serif;
+    font-size: 2.7vh;
+    font-weight: 700;
+    line-height: 3.5vh;
+}
+
+.soldier-level-icon {
+    height: 7vh;
+    width: 7vh;
+    margin: 0;
+}
+
+.soldier-level-stats {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 0;
+    display: flex;
+}
+
+.soldier-menu .soldier-menu-stats {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 1vh;
+    margin-bottom: 1.2vh;
+    display: flex;
+}
+
+.soldier-menu-stats-h {
+    color: #fff;
+    text-align: right;
+    letter-spacing: .08vh;
+    margin-bottom: 0.3vh;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.25vh;
+    font-weight: 600;
+    line-height: 1.8vh;
+    text-decoration: none;
+}
+
+.soldier-stats-bar-orange {
+    z-index: 2;
+    width: 4.5vh;
+    height: 4px;
+    background-color: #ee930e;
+    position: absolute;
+}
+
+.soldier-stats-bar-black {
+    z-index: 1;
+    width: 7vh;
+    height: 4px;
+    background-color: rgba(16, 16, 16, .5);
+    position: relative;
+}
+
+.soldier-stats-bar-orange--kits {
+    width: 5vh;
+}
+
+.soldier-stats-bar-orange--vehicles {
+    width: 3vh;
+}
+
+.soldier-stats-bar-orange--medals {
+    width: 1.5vh;
+}
+
+.soldier-stats-bar-orange--assignments {
+    width: 1vh;
+}
+
+.soldier-stats-bar-orange--dogtags {
+    width: 3vh;
+}
+
+.soldier-level-no {
+    width: 6vh;
+    border: 1px solid rgba(255, 255, 255, .3);
+    margin-right: 1.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    flex: unset;
+}
+
+.soldier-level-text {
+    color: #fff;
+    text-align: center;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.4vh;
+    font-weight: 500;
+    line-height: 1.8vh;
+}
+
+.soldier-level-current {
+    color: #fff;
+    margin-right: 0.5vh;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.4vh;
+    font-weight: 500;
+    line-height: 1.8vh;
+    width: 22vh;
+    padding: 0;
+    max-width: 26%;
+}
+
+.soldier-level-estimate {
+    color: rgba(255, 255, 255, .5);
+    margin-right: 0.5vh;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.4vh;
+    font-weight: 500;
+    line-height: 1.8vh;
+    padding: 0;
+    flex: unset;
+    max-width: none;
+}
+
+.soldier-game-stats {
+    padding: 0;
+    position: relative;
+    top: -34vh;
+    left: 12vh;
+}
+
+.soldier-stats {
+    margin-right: 9vh;
+}
+
+.soldier-stats-w {
+    align-items: flex-start;
+    margin-bottom: 5vh;
+    display: flex;
+}
+
+.soldier-stats-h {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.5vh;
+    font-weight: 500;
+    line-height: 1.8vh;
+}
+
+.soldier-stats-percent {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Rajdhani, sans-serif;
+    font-size: 2.8vh;
+    font-weight: 700;
+    line-height: 3.5vh;
+}
+
+.soldier-top-stats {
+    width: 24vh;
+    height: 15vh;
+    background-color: rgba(16, 16, 16, .5);
+    padding: 1vh;
+    text-decoration: none;
+    position: relative;
+}
+
+.soldier-top-stats-w {
+    grid-column-gap: 6px;
+    grid-row-gap: 8px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    display: grid;
+}
+
+.soldier-top-stats-info {
+    position: absolute;
+    bottom: 1vh;
+    left: 1vh;
+}
+
+.w-inline-block {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.soldier-top-stats-h {
+    color: rgba(255, 255, 255, .7);
+    letter-spacing: .15vh;
+    text-transform: uppercase;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.3vh;
+    font-weight: 600;
+    line-height: 1.8vh;
+}
+
+.soldier__top-stats-info {
+    position: absolute;
+    bottom: 1vh;
+    left: 1vh;
+}
+
+.soldier-top-stats-weapon {
+    color: #fff;
+    letter-spacing: .05vh;
+    text-transform: capitalize;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.4vh;
+    font-weight: 600;
+    line-height: 1.8vh;
+}
+
+.soldier-top-stats-weapon-s {
+    color: rgba(255, 255, 255, .5);
+    letter-spacing: .05vh;
+    text-transform: none;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.3vh;
+    font-weight: 600;
+    line-height: 1.8vh;
+}
+
+.soldier-tank-white {
+    z-index: 1;
+    height: 8vh;
+    position: absolute;
+    left: 10%;
+}
+
+.soldier-tank-black {
+    z-index: 2;
+    height: 8vh;
+    display: none;
+    position: absolute;
+    left: 10%;
+}
+
+.soldier-acw-black {
+    z-index: 2;
+    height: 8vh;
+    display: none;
+    position: absolute;
+}
+
+.soldier-acw-white {
+    z-index: 1;
+    height: 8vh;
+    margin-left: 0;
+    position: absolute;
+}
+
+.soldier-engineer-white {
+    z-index: 1;
+    height: 6vh;
+    margin-left: 6%;
+    position: absolute;
+    top: 25%;
+    bottom: 35%;
+    left: 10%;
+    right: 0%;
+}
+
+.soldier-engineer-black {
+    z-index: 2;
+    height: 6vh;
+    margin-left: 6%;
+    display: none;
+    position: absolute;
+    top: 25%;
+    bottom: 35%;
+    left: 10%;
+}
+
+.soldier-m9-white {
+    z-index: 1;
+    height: 8vh;
+    position: absolute;
+    left: 25%;
+    width: auto;
+}
+
+.soldier-m9-black {
+    z-index: 2;
+    height: 8vh;
+    display: none;
+    position: absolute;
+    left: 25%;
+    width: auto;
+}
+
+.soldier-menu-w:hover {
+    background-color: white;
+}
+
+.soldier-menu-w:hover .soldier-stats-bar-black {
+    background-color: rgba(16, 16, 16, .3);
+}
+
+.soldier-menu-w:hover .soldier-menu-h {
+    color: rgba(16, 16, 16);
+    font-weight: 500;
+}
+
+.soldier-menu-w:hover .soldier-menu-stats-h {
+    color: rgba(16, 16, 16);
+    font-weight: 500;
+}
+
+.soldier-top-stats:hover {
+    background-color: #fff;
+}
+
+.soldier-top-stats:hover .soldier-top-stats-h {
+    color: rgba(16, 16, 16);
+    text-decoration: none;
+}
+
+.soldier-top-stats:hover .soldier-top-stats-weapon {
+    color: rgba(16, 16, 16);
+}
+
+.soldier-top-stats:hover .soldier-top-stats-weapon-s {
+    color: rgba(16, 16, 16);
+}
+
+.soldier-top-stats:hover .soldier-tank-white {
+    display: none;
+}
+
+.soldier-top-stats:hover .soldier-tank-black {
+    display: block;
+}
+
+.soldier-top-stats:hover .soldier-acw-white {
+    display: none;
+}
+
+.soldier-top-stats:hover .soldier-acw-black {
+    display: block;
+}
+
+.soldier-top-stats:hover .soldier-engnineer-white {
+    display: none;
+}
+
+.soldier-top-stats:hover .soldier-engineer-black {
+    display: block;
+}
+
+.soldier-top-stats:hover .soldier-m9-white {
+    display: none;
+}
+
+.soldier-top-stats:hover .soldier-m9-black {
+    display: block;
 }

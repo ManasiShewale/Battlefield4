@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/navbar';
-import Home from './screens/home';
+// import Home from './screens/home';
 import SideMenu from './components/sideMenu';
 import Invite from './components/invite';
+import Soldier from './screens/soldier';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Invite />
         <div className='border'></div>
         <SideMenu />
-        <Home />
+        {/* <Home /> */}
+        <Soldier />
       </div>
     </Router>
   );

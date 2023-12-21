@@ -31,7 +31,7 @@ function Navbar() {
       </ul>
      </div>
      <img src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601ab1b899e303b6e902c5e4_home__level-icon.png" alt="My Logo" className="Logo" />
-     <Link className="navbar-brand" to="/"><img src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038f71092c1304bda9086db_BF4__logo.png" alt="" /></Link>
+     <Link className="navbar-brand mr-auto" to="/"><img src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038f71092c1304bda9086db_BF4__logo.png" alt="" /></Link>
   </nav>
     );
 }
