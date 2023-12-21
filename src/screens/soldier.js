@@ -5,7 +5,7 @@ function Soldier() {
   return (
     <div className="row soldier">
       <div className="col-lg-4 soldier-look">
-        <div>
+        <div className="dogtags">
           <img
             src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc400244d4c8d9870cd_premium%20dog%20tag.png"
             alt=""
@@ -223,6 +223,11 @@ function Soldier() {
             />
           </Link>
         </div>
+        <img
+          src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc47b02ee10043f39c3_soldier__BFemblem.png"
+          alt=""
+          className="soldier-emblem"
+        />
       </div>
     </div>
   );

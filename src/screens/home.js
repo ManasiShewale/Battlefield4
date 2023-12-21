@@ -3,6 +3,7 @@ import MultiCarousel from "../components/carousel";
 import Card from "../components/card";
 import RecentlyPlayed from "../components/cardData";
 
+
 function createCard(cardProps){
     return(<Card 
         key={cardProps.id}
@@ -15,7 +16,7 @@ function createCard(cardProps){
 function Home(){
     return(
        <div>
-       <MultiCarousel />
+       <div><MultiCarousel /></div>
        <div className="RecentlyPlayed container-fluid">
             <div className="row">
               {RecentlyPlayed.map(createCard)}
