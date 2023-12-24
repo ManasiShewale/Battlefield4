@@ -24,12 +24,14 @@ const fetchData = async() => {
             sequence: 1
         }).toArray();
 
-        // Return the data
+
         return {
             gamestats: gameStatsData,
             soldierMenu: soldierMenuData,
             TopGameStats: TopGameStatsData
         };
+    } catch (error) {
+        console.error("Error fetching TopGameStatsData:", error);
     } finally {
         await client.close();
     }
