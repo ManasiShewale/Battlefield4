@@ -7,7 +7,7 @@ import TopStats from "../components/topStats";
 
 function Soldier() {
   const [data, setData] = useState(null);
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     // Function to fetch data from the server
     const fetchData = async () => {
