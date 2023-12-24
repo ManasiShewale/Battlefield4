@@ -3,7 +3,7 @@ const cors = require("cors");
 const fetchData = require("./db");
 
 const app = express();
-const port = 5001;
+const PORT = process.env.PORT || 5001;
 
 // Enable CORS for all routes
 app.use(cors({
@@ -26,5 +26,5 @@ app.get("/api/data", async(req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port ${PORT}`);
 });
