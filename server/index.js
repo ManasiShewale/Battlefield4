@@ -7,7 +7,7 @@ const port = 5000;
 
 // Enable CORS for all routes
 app.use(cors({
-    origin: ["https://battlefield4.vercel.app/"],
+    origin: ["https://battlefield4.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
 }));

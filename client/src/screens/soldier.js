@@ -13,7 +13,7 @@ function Soldier() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://battlefield4-5e0ip0xuj-manasis-projects-97e04347.vercel.app/api/data"
+          "https://battlefield4-5e0ip0xuj-manasis-projects-97e04347.vercel.app/data"
         );
         // Assuming your server has an endpoint /api/data that returns the required data
         setData(response.data);
