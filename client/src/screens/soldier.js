@@ -129,17 +129,18 @@ function Soldier() {
           </div>
         </div>
         <div className="soldier-top-stats-w">
-          {TopGameStatsData.map((menu, index) => (
-            <TopStats
-              key={index}
-              heading={menu.heading}
-              subtitle1={menu.subtitle1}
-              subtitle2={menu.subtitle2}
-              img={menu.img}
-              imgBlack={menu.imgBlack}
-              marginLeft={menu.marginLeft}
-            />
-          ))}
+          {TopGameStatsData &&
+            TopGameStatsData.map((menu, index) => (
+              <TopStats
+                key={index}
+                heading={menu.heading}
+                subtitle1={menu.subtitle1}
+                subtitle2={menu.subtitle2}
+                img={menu.img}
+                imgBlack={menu.imgBlack}
+                marginLeft={menu.marginLeft}
+              />
+            ))}
         </div>
         <img
           src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc47b02ee10043f39c3_soldier__BFemblem.png"

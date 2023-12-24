@@ -5,6 +5,7 @@ const {
 const uri = 'mongodb+srv://manasishewale9:Mxnxsi@cluster0.9mputlx.mongodb.net/Battlefield4';
 const client = new MongoClient(uri);
 const fetchData = async() => {
+
     try {
         await client.connect();
 
