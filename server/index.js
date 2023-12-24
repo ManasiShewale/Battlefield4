@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5001;
 
 // Enable CORS for all routes
 app.use(cors({
-    origin: ["https://65887d8ecaaaa76126ca8ffe--gregarious-llama-c7eab3.netlify.app/soldier"],
+    origin: ["https://battlefield4-client.onrender.com/"],
     methods: ["POST", "GET"],
     credentials: true
 }));
