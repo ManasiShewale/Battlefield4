@@ -2,6 +2,7 @@ import React from "react";
 
 function SoldierMenuBar(props) {
   const width = props.width + "vh";
+  const widthBlack = props.stats ? "7vh" : "0";
   return (
     <div className="col-lg-12 soldier-menu-w">
       <div className="soldier-menu-h">{props.heading}</div>
@@ -14,7 +15,10 @@ function SoldierMenuBar(props) {
             className="soldier-stats-bar-orange soldier-stats-bar-orange "
             style={{ width: width }}
           ></div>
-          <div className="soldier-stats-bar-black"></div>
+          <div
+            className="soldier-stats-bar-black"
+            style={{ width: widthBlack }}
+          ></div>
         </div>
       </div>
     </div>

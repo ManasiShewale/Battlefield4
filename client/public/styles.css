@@ -1,6 +1,5 @@
 body {
-    background-image: linear-gradient(rgba(0, 12, 19, .6), rgba(0, 12, 19, .6)), url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038f70ef0141a2f22d50f58_menu__background.jpg");
-    background-color: #161616
+    background-image: linear-gradient(rgba(0, 12, 19, 0.6), rgba(0, 12, 19, 0.6)), url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038f70ef0141a2f22d50f58_menu__background.jpg");
 }
 
 div {
@@ -87,9 +86,47 @@ button {
     opacity: 1;
 }
 
-.sideMenu-img:active {
+.sideMenu-img:active,
+.sideMenu-img:focus {
     opacity: 1;
     border-left: 3px solid #ee930e;
+}
+
+.help {
+    background-repeat: no-repeat;
+    width: 6vh;
+    height: 3.2vh;
+    opacity: .5;
+    background-color: rgba(0, 0, 0, 0);
+    border-left: 3px solid rgba(0, 0, 0, 0);
+    display: flex;
+    position: relative;
+    top: 27vh;
+}
+
+.help:hover {
+    opacity: 1;
+}
+
+.help-img {
+    height: auto;
+    width: auto;
+}
+
+.quit {
+    top: 29vh;
+    position: relative;
+    left: 2.5vh;
+    opacity: 0.5;
+}
+
+.quit-img {
+    width: 1.4vh;
+    height: 1.4vh;
+}
+
+.quit:hover {
+    opacity: 1;
 }
 
 .Logo {
@@ -133,23 +170,22 @@ img {
     bottom: 0%;
     left: auto;
     right: 0%;
-    background-color: rgba(16, 16, 16, 0.8);
     transform: translate3d(19vh, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
 }
 
-.invite-block:hover {
-    transform: translate3d(0vh, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+.invite-row {
+    margin-bottom: 1.5vh;
+    position: relative;
+    width: auto;
+    left: 1vh;
 }
 
 .invite-line {
     height: 1px;
+    width: auto;
     opacity: 0;
     background-color: rgba(255, 255, 255, .1);
-}
-
-.invite-block:hover+.invite-line {
-    opacity: 1;
 }
 
 .invite-img {
@@ -190,14 +226,16 @@ img {
     font-size: 1.5vh;
     font-weight: 600;
     line-height: 1.8vh;
+    opacity: 0;
+    margin-bottom: 1vh
 }
 
 .invite-item {
-    background-image: url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601ab1596100550691c84f76_home__join-black.svg");
+    background-image: url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601ab158769fa828e95f98df_home__join-default.svg");
     background-repeat: no-repeat;
+    opacity: 0.4;
     background-size: 4.3vh;
     height: 4.3vh;
-    margin-left: 1vh;
     display: inline-block;
 }
 
@@ -211,6 +249,7 @@ img {
     font-size: 1.2vh;
     font-weight: 600;
     line-height: 1.6vh;
+    padding: 0.4vh 0 0 3.5vh
 }
 
 .Ionline {
@@ -219,6 +258,39 @@ img {
 
 .Ioffline {
     background-image: url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601ab1583424fd3ddf23a848_home__friend-picture-420.png");
+}
+
+.invite-block:hover {
+    transform: translate3d(0vh, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    background-color: rgba(16, 16, 16, 0.8);
+}
+
+.invite-block:hover .invite-line {
+    opacity: 1;
+}
+
+.invite-block:hover .invite-h {
+    opacity: 1;
+}
+
+.invite-h-row {
+    margin-top: 1.2vh;
+}
+
+.invite-row:hover {
+    background-color: white;
+}
+
+.invite-row:hover .invite-item-h {
+    color: black;
+}
+
+.invite-row:hover .invite-item {
+    opacity: 1;
+}
+
+.invite-row:hover .squad {
+    background-image: url("https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601ab1596100550691c84f76_home__join-black.svg");
 }
 
 .react-multi-carousel-list {
@@ -319,7 +391,7 @@ img {
     height: 0;
     flex: none;
     position: relative;
-    top: -81vh;
+    top: -89vh;
     left: 16vh;
 }
 
@@ -394,8 +466,8 @@ h2 {
 
 .soldier-content {
     display: flex;
-    top: -45vh;
-    left: 21vh;
+    top: -53vh;
+    left: 17vh;
     flex-direction: column;
     padding: 0;
 }
@@ -488,7 +560,6 @@ h2 {
 
 .soldier-stats-bar-orange {
     z-index: 2;
-    width: 4.5vh;
     height: 4px;
     background-color: #ee930e;
     position: absolute;
@@ -500,26 +571,6 @@ h2 {
     height: 4px;
     background-color: rgba(16, 16, 16, .5);
     position: relative;
-}
-
-.soldier-stats-bar-orange--kits {
-    width: 5vh;
-}
-
-.soldier-stats-bar-orange--vehicles {
-    width: 3vh;
-}
-
-.soldier-stats-bar-orange--medals {
-    width: 1.5vh;
-}
-
-.soldier-stats-bar-orange--assignments {
-    width: 1vh;
-}
-
-.soldier-stats-bar-orange--dogtags {
-    width: 3vh;
 }
 
 .soldier-level-no {
@@ -569,7 +620,7 @@ h2 {
 .soldier-game-stats {
     padding: 0;
     position: relative;
-    top: -34vh;
+    top: -42vh;
     left: 12vh;
 }
 
@@ -666,72 +717,23 @@ h2 {
     line-height: 1.8vh;
 }
 
-.soldier-tank-white {
+.white-img {
     z-index: 1;
     height: 8vh;
-    position: absolute;
-    left: 10%;
-}
-
-.soldier-tank-black {
-    z-index: 2;
-    height: 8vh;
-    display: none;
-    position: absolute;
-    left: 10%;
-}
-
-.soldier-acw-black {
-    z-index: 2;
-    height: 8vh;
-    display: none;
-    position: absolute;
-}
-
-.soldier-acw-white {
-    z-index: 1;
-    height: 8vh;
-    margin-left: 0;
-    position: absolute;
-}
-
-.soldier-engineer-white {
-    z-index: 1;
-    height: 6vh;
-    margin-left: 6%;
-    position: absolute;
-    top: 25%;
-    bottom: 35%;
-    left: 10%;
-    right: 0%;
-}
-
-.soldier-engineer-black {
-    z-index: 2;
-    height: 6vh;
-    margin-left: 6%;
-    display: none;
-    position: absolute;
-    top: 25%;
-    bottom: 35%;
-    left: 10%;
-}
-
-.soldier-m9-white {
-    z-index: 1;
-    height: 8vh;
-    position: absolute;
-    left: 25%;
     width: auto;
+    position: absolute;
+    left: 10%;
+    padding-left: 1vh;
+    padding-right: 1vh;
 }
 
-.soldier-m9-black {
+.black-img {
     z-index: 2;
     height: 8vh;
+    width: auto;
     display: none;
     position: absolute;
-    left: 25%;
-    width: auto;
+    left: 10%;
 }
 
 .soldier-menu-w:hover {
@@ -769,36 +771,12 @@ h2 {
     color: rgba(16, 16, 16);
 }
 
-.soldier-top-stats:hover .soldier-tank-white {
-    display: none;
-}
-
-.soldier-top-stats:hover .soldier-tank-black {
+.soldier-top-stats:hover .black-img {
     display: block;
 }
 
-.soldier-top-stats:hover .soldier-acw-white {
+.soldier-top-stats:hover .white-img {
     display: none;
-}
-
-.soldier-top-stats:hover .soldier-acw-black {
-    display: block;
-}
-
-.soldier-top-stats:hover .soldier-engnineer-white {
-    display: none;
-}
-
-.soldier-top-stats:hover .soldier-engineer-black {
-    display: block;
-}
-
-.soldier-top-stats:hover .soldier-m9-white {
-    display: none;
-}
-
-.soldier-top-stats:hover .soldier-m9-black {
-    display: block;
 }
 
 .soldier-emblem {
@@ -810,4 +788,18 @@ h2 {
     bottom: auto;
     left: 52vh;
     right: 35.5vh;
+}
+
+@media screen and (max-width: 988px) {
+    .soldier-info {
+        position: absolute;
+        top: 57vh;
+    }
+    .soldier-select {
+        position: absolute;
+        top: 74.5vh;
+    }
+    .soldier-game-stats {
+        top: 76vh
+    }
 }

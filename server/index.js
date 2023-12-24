@@ -3,14 +3,10 @@ const cors = require("cors");
 const fetchData = require("./db");
 
 const app = express();
-const port = 5000;
+const port = 5001;
 
 // Enable CORS for all routes
-app.use(cors({
-    origin: ["https://battlefield4.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true
-}));
+app.use(cors());
 
 // Define a route to fetch data
 app.get("/api/data", async(req, res) => {

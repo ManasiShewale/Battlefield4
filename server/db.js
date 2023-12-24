@@ -11,6 +11,7 @@ const fetchData = async() => {
         // Access the collections
         const gameStatsCollection = client.db('Battlefield4').collection('gameStats');
         const soldierMenuCollection = client.db('Battlefield4').collection('soldierMenu');
+        const TopGameStatsCollection = client.db('Battlefield4').collection('TopGameStats');
 
         // Fetch all data from both collections
         const gameStatsData = await gameStatsCollection.find({}).sort({
@@ -19,15 +20,15 @@ const fetchData = async() => {
         const soldierMenuData = await soldierMenuCollection.find({}).sort({
             sequence: 1
         }).toArray();
-
-        // Log the data
-        console.log('GameStats Data:', gameStatsData);
-        console.log('SoldierMenu Data:', soldierMenuData);
+        const TopgameStatsData = await TopGameStatsCollection.find({}).sort({
+            sequence: 1
+        }).toArray();
 
         // Return the data
         return {
             gamestats: gameStatsData,
             soldierMenu: soldierMenuData,
+            TopGameStats: TopGameStatsData
         };
     } finally {
         await client.close();

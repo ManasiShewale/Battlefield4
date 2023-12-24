@@ -1,20 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SoldierMenuBar from "../components/soldierMenuBar";
+import TopStats from "../components/topStats";
 
 function Soldier() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     // Function to fetch data from the server
-    axios.defaults.withCredentials = true;
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "https://battlefield4-5e0ip0xuj-manasis-projects-97e04347.vercel.app/data"
-        );
+        const response = await axios.get("http://localhost:5001/api/data");
         // Assuming your server has an endpoint /api/data that returns the required data
         setData(response.data);
       } catch (error) {
@@ -26,6 +24,9 @@ function Soldier() {
     fetchData();
   }, []);
   const soldierMenuData = data && data.soldierMenu ? data.soldierMenu : [];
+
+  const TopGameStatsData = data && data.TopGameStats ? data.TopGameStats : [];
+  console.log(TopGameStatsData);
   return (
     <div className="row soldier">
       <div className="col-lg-4 soldier-look">
@@ -126,82 +127,17 @@ function Soldier() {
           </div>
         </div>
         <div className="soldier-top-stats-w">
-          <Link className="soldier-top-stats w-inline-block">
-            <div className="soldier-top-stats-h">top vehicle</div>
-            <div className="soldier-top-stats-info">
-              <div className="soldier-top-stats-weapon">Main Battle tank</div>
-              <div className="soldier-top-stats-weapon-s">33 kills</div>
-            </div>
-            <img
-              src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc52754eb82199acdb5_soldier__tank-black.png"
-              loading="eager"
-              alt=""
-              className="soldier-tank-black"
+          {TopGameStatsData.map((menu, index) => (
+            <TopStats
+              key={index}
+              heading={menu.heading}
+              subtitle1={menu.subtitle1}
+              subtitle2={menu.subtitle2}
+              img={menu.img}
+              imgBlack={menu.imgBlack}
+              marginLeft={menu.marginLeft}
             />
-            <img
-              src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc68123215c0f47c3c8_soldier__tank-white.png"
-              loading="eager"
-              alt=""
-              className="soldier-tank-white"
-            />
-          </Link>
-          <Link className="soldier-top-stats w-inline-block">
-            <div className="soldier-top-stats-h">top primary</div>
-            <div className="soldier-top-stats-info">
-              <div className="soldier-top-stats-weapon">ACW-R</div>
-              <div className="soldier-top-stats-weapon-s">495 kills</div>
-            </div>
-            <img
-              src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc6eabe3734a771d95a_acw-black.png"
-              loading="eager"
-              alt=""
-              className="soldier-acw-black"
-            />
-            <img
-              src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc6b1a1baf4c6b4bff4_acw-white.png"
-              loading="eager"
-              alt=""
-              className="soldier-acw-white"
-            />
-          </Link>
-          <Link className="soldier-top-stats w-inline-block">
-            <div className="soldier-top-stats-h">top class</div>
-            <div className="soldier-top-stats-info">
-              <div className="soldier-top-stats-weapon">Engineer</div>
-              <div className="soldier-top-stats-weapon-s">828,514 score</div>
-            </div>
-            <img
-              src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601ab1fa034ba969f815fb11_engineer-black.svg"
-              loading="eager"
-              alt=""
-              className="soldier-engineer-black"
-            />
-            <img
-              src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/601ab1fa6cf2747d4ae31e5b_engineer-white.svg"
-              loading="eager"
-              alt=""
-              className="soldier-engineer-white"
-            />
-          </Link>
-          <Link className="soldier-top-stats w-inline-block">
-            <div className="soldier-top-stats-h">top sidearm</div>
-            <div className="soldier-top-stats-info">
-              <div className="soldier-top-stats-weapon">M9</div>
-              <div className="soldier-top-stats-weapon-s">112 kills</div>
-            </div>
-            <img
-              src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc3fbd3c9aec8ff96ed_m9-black.png"
-              loading="eager"
-              alt=""
-              className="soldier-m9-black"
-            />
-            <img
-              src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc4d687fc55d8d3ed57_m9-white.png"
-              loading="eager"
-              alt=""
-              className="soldier-m9-white"
-            />
-          </Link>
+          ))}
         </div>
         <img
           src="https://uploads-ssl.webflow.com/6013fff62154adaa4600f932/6038fcc47b02ee10043f39c3_soldier__BFemblem.png"
