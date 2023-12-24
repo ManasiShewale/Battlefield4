@@ -26,9 +26,8 @@ function Soldier() {
     fetchData();
   }, []);
   const soldierMenuData = data && data.soldierMenu ? data.soldierMenu : [];
-
+  console.log(soldierMenuData);
   const TopGameStatsData = data && data.TopGameStats ? data.TopGameStats : [];
-  console.log(TopGameStatsData);
   return (
     <div className="row soldier">
       <div className="col-lg-4 soldier-look">
