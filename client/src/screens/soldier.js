@@ -12,7 +12,9 @@ function Soldier() {
     // Function to fetch data from the server
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/data");
+        const response = await axios.get(
+          "https://battlefield4-api.vercel.app/api/data"
+        );
         // Assuming your server has an endpoint /api/data that returns the required data
         setData(response.data);
       } catch (error) {
