@@ -1,7 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import SoldierMenuBar from "../components/soldierMenuBar";
 
 function Soldier() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Function to fetch data from the server
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/data");
+        // Assuming your server has an endpoint /api/data that returns the required data
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    // Call the fetchData function
+    fetchData();
+  }, []);
+  const soldierMenuData = data && data.soldierMenu ? data.soldierMenu : [];
   return (
     <div className="row soldier">
       <div className="col-lg-4 soldier-look">
@@ -38,10 +59,18 @@ function Soldier() {
             <div className="soldier-level-info-h">Cookie</div>
             <div className="row soldier-level-stats">
               <div className="col-sm-4 soldier-level-no">
-                <div className="soldier-level-text">63</div>
+                <div className="soldier-level-text">
+                  {data &&
+                    data.gamestats &&
+                    data.gamestats.length > 0 &&
+                    data.gamestats[0].levelNo}
+                </div>
               </div>
               <div className="col-sm-4 soldier-level-current">
-                69,840 / 110,000
+                {data &&
+                  data.gamestats &&
+                  data.gamestats.length > 0 &&
+                  data.gamestats[0].currentLevel}
               </div>
               <div className="col-sm-4 soldier-level-estimate">
                 - Estimated rank up in 1h
@@ -51,82 +80,14 @@ function Soldier() {
         </div>
         <div className="soldier-select">
           <div className="row soldier-menu">
-            <div className="col-lg-12 soldier-menu-w">
-              <div className="soldier-menu-h">Weapons</div>
-
-              <div className="soldier-menu-stats">
-                <div className="col-lg-12 soldier-menu-stats-h">134/185</div>
-
-                <div className="soldier-menu-stats-bar">
-                  <div className="soldier-stats-bar-orange soldier-stats-bar-orange--weapons"></div>
-                  <div className="soldier-stats-bar-black"></div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-12 soldier-menu-w">
-              <div className="soldier-menu-h">kits</div>
-
-              <div className="soldier-menu-stats">
-                <div className="col-lg-12 soldier-menu-stats-h">46/64</div>
-
-                <div className="soldier-menu-stats-bar">
-                  <div className="soldier-stats-bar-orange soldier-stats-bar-orange--kits"></div>
-                  <div className="soldier-stats-bar-black"></div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-12 soldier-menu-w">
-              <div className="soldier-menu-h">Vehicles</div>
-
-              <div className="soldier-menu-stats">
-                <div className="col-lg-12 soldier-menu-stats-h">77/182</div>
-
-                <div className="soldier-menu-stats-bar">
-                  <div className="soldier-stats-bar-orange soldier-stats-bar-orange--vehicles"></div>
-                  <div
-                    className="soldier-stats-bar-black"
-                    style={{ "background-color": "rgba(16, 16, 16, 0.5)" }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-12 soldier-menu-w">
-              <div className="soldier-menu-h">Medals</div>
-
-              <div className="soldier-menu-stats">
-                <div className="col-lg-12 soldier-menu-stats-h">11/54</div>
-                <div className="soldier-menu-stats-bar">
-                  <div className="soldier-stats-bar-orange soldier-stats-bar-orange--medals"></div>
-                  <div className="soldier-stats-bar-black"></div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-12 soldier-menu-w">
-              <div className="soldier-menu-h">Assignments</div>
-
-              <div className="soldier-menu-stats">
-                <div className="col-lg-12 soldier-menu-stats-h">21/110</div>
-                <div className="soldier-menu-stats-bar">
-                  <div className="soldier-stats-bar-orange soldier-stats-bar-orange--assignments"></div>
-                  <div className="soldier-stats-bar-black"></div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-12 soldier-menu-w">
-              <div className="soldier-menu-h">Dog tags</div>
-
-              <div className="soldier-menu-stats">
-                <div className="col-lg-12 soldier-menu-stats-h">357/720</div>
-
-                <div className="soldier-menu-stats-bar">
-                  <div className="soldier-stats-bar-orange soldier-stats-bar-orange--dogtagss"></div>
-                  <div className="soldier-stats-bar-black"></div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-12 soldier-menu-w">
-              <div className="soldier-menu-h">Battlepacks</div>
-            </div>
+            {soldierMenuData.map((menu, index) => (
+              <SoldierMenuBar
+                key={index}
+                heading={menu.Heading}
+                stats={menu.stats}
+                width={menu.width}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -134,15 +95,31 @@ function Soldier() {
         <div className="soldier-stats-w">
           <div className="soldier-stats">
             <div className="soldier-stats-h">wins</div>
-            <div className="soldier-stats-percent">44%</div>
+            <div className="soldier-stats-percent">
+              {data &&
+                data.gamestats &&
+                data.gamestats.length > 0 &&
+                data.gamestats[0].wins}
+              %
+            </div>
           </div>
           <div className="soldier-stats">
             <div className="soldier-stats-h">score/min</div>
-            <div className="soldier-stats-percent">592</div>
+            <div className="soldier-stats-percent">
+              {data &&
+                data.gamestats &&
+                data.gamestats.length > 0 &&
+                data.gamestats[0].score}
+            </div>
           </div>
           <div className="soldier-stats">
             <div className="soldier-stats-h">kills/min</div>
-            <div className="soldier-stats-percent">0.60</div>
+            <div className="soldier-stats-percent">
+              {data &&
+                data.gamestats &&
+                data.gamestats.length > 0 &&
+                data.gamestats[0].kills}
+            </div>
           </div>
         </div>
         <div className="soldier-top-stats-w">
