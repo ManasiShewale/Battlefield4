@@ -6,7 +6,11 @@ const app = express();
 const port = 5000;
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors({
+    origin: ["https://battlefield4.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true
+}));
 
 // Define a route to fetch data
 app.get("/api/data", async(req, res) => {

@@ -9,9 +9,12 @@ function Soldier() {
 
   useEffect(() => {
     // Function to fetch data from the server
+    axios.defaults.withCredentials = true;
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/data");
+        const response = await axios.get(
+          "https://battlefield4-5e0ip0xuj-manasis-projects-97e04347.vercel.app/api/data"
+        );
         // Assuming your server has an endpoint /api/data that returns the required data
         setData(response.data);
       } catch (error) {
