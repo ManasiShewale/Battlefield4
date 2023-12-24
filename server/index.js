@@ -15,7 +15,7 @@ app.use(cors({
 // Define a route to fetch data
 app.get("/api/data", async(req, res) => {
     try {
-        const data = await fetchData();
+        const data = await fetchData(process.env.uri);
         res.json(data);
     } catch (error) {
         console.error("Error fetching data:", error);
