@@ -3,19 +3,14 @@ const cors = require("cors");
 const fetchData = require("./db");
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = 5000;
 
-// Enable CORS for all routes
-app.use(cors({
-    origin: ["https://battlefield4-client.onrender.com/"],
-    methods: ["POST", "GET"],
-    credentials: true
-}));
+app.use(cors());
 
 // Define a route to fetch data
 app.get("/api/data", async(req, res) => {
     try {
-        const data = await fetchData(process.env.uri);
+        const data = await fetchData();
         res.json(data);
     } catch (error) {
         console.error("Error fetching data:", error);
@@ -25,6 +20,6 @@ app.get("/api/data", async(req, res) => {
     }
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

@@ -7,15 +7,12 @@ import TopStats from "../components/topStats";
 
 function Soldier() {
   const [data, setData] = useState(null);
-  axios.defaults.withCredentials = true;
+
   useEffect(() => {
     // Function to fetch data from the server
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "https://battlefield4-server-xw85.onrender.com/api/data"
-        );
-        // Assuming your server has an endpoint /api/data that returns the required data
+        const response = await axios.get("http://localhost:5000/api/data");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -26,7 +23,6 @@ function Soldier() {
     fetchData();
   }, []);
   const soldierMenuData = data && data.soldierMenu ? data.soldierMenu : [];
-  console.log(soldierMenuData);
   const TopGameStatsData = data && data.TopGameStats ? data.TopGameStats : [];
   return (
     <div className="row soldier">

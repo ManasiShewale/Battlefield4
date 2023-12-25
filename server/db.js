@@ -21,7 +21,7 @@ const fetchData = async() => {
         const soldierMenuData = await soldierMenuCollection.find({}).sort({
             sequence: 1
         }).toArray();
-        const TopgameStatsData = await TopGameStatsCollection.find({}).sort({
+        const TopGameStatsData = await TopGameStatsCollection.find({}).sort({
             sequence: 1
         }).toArray();
 
@@ -32,7 +32,7 @@ const fetchData = async() => {
             TopGameStats: TopGameStatsData
         };
     } catch (error) {
-        console.error("Error fetching TopGameStatsData:", error);
+        console.error("Error connecting to MongoDB:", error);
     } finally {
         await client.close();
     }
