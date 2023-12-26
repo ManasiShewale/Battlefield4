@@ -5,7 +5,13 @@ const fetchData = require("./db");
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
+app.use(cors(
+    {
+    origin:["https://battlefield4.vercel.app"],
+    methods:["POST","GET"],
+    credentials:true
+    }
+));
 
 // Define a route to fetch data
 app.get("/api/data", async(req, res) => {
