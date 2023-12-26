@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
     origin: ["https://battlefield4-client.vercel.app"],
     methods: ["POST", "GET"],
+    credentials:true,
+    optionsSuccessStatus: 204
 }));
 
 // Define a route to fetch data
