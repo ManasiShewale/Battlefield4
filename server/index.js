@@ -7,7 +7,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+res.header("Access-Control-Allow-Origin");
 app.use(cors({
     origin: ["https://battlefield4-client.vercel.app"],
     methods: ["POST", "GET"],
