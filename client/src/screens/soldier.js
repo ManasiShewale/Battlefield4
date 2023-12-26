@@ -7,12 +7,14 @@ import TopStats from "../components/topStats";
 
 function Soldier() {
   const [data, setData] = useState(null);
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     // Function to fetch data from the server
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/data");
+        const response = await axios.get(
+          "https://battlefield4-server.vercel.app/api/data"
+        );
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

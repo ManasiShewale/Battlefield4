@@ -1,11 +1,17 @@
 const express = require("express");
 const cors = require("cors");
 const fetchData = require("./db");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://battlefield4-client.vercel.app"],
+    methods: ["POST", "GET"],
+}));
 
 // Define a route to fetch data
 app.get("/api/data", async(req, res) => {
