@@ -10,13 +10,6 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,Accept, x-client-key, x-client-token, x-client-secret, Authorization");
     next();
 });
-app.use(cors({
-    origin: ["https://battlefield4-client.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-    optionsSuccessStatus: 204
-}));
-
 // Define a route to fetch data
 app.get("/api/data", async(req, res) => {
     try {
