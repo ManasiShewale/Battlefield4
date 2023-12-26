@@ -10,7 +10,9 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,Accept, x-client-key, x-client-token, x-client-secret, Authorization");
     next();
 });
-// Define a route to fetch data
+app.get("/", (req, res) => {
+    res.send("the server is running")
+})
 app.get("/api/data", async(req, res) => {
     try {
         const data = await fetchData();
