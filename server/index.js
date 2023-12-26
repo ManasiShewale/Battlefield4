@@ -4,12 +4,11 @@ const fetchData = require("./db");
 
 const app = express();
 const PORT = 5000;
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://battlefield4-client.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,Accept, x-client-key, x-client-token, x-client-secret, Authorization");
-    next();
-});
+app.use(cors({
+    origin: 'https://battlefield4-client.vercel.app',
+    methods: ['GET', 'POST'],
+    credentials: true,
+}));
 app.get("/", (req, res) => {
     res.send("the server is running")
 })
